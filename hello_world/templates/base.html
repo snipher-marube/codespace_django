@@ -1,0 +1,17 @@
+{% load django_browser_reload %}
+{% load static %}
+
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>snipherDev | {% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="{% static 'main.css' %}">
+    </head>
+
+    <body>
+        {% block content %}
+            <!--content goes here-->
+        {% endblock %}
+    </body>
+</html>
