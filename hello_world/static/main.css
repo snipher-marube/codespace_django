@@ -1,3 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #fff;
+  list-style: none;
+}
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -5,6 +12,7 @@ body {
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    
   }
   
   code {
@@ -44,3 +52,276 @@ body {
     font-size: 0.75rem;
   }
 
+  .neon-button {
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #f00, 0 0 30px #f00, 0 0 40px #f00, 0 0 50px #f00, 0 0 60px #f00, 0 0 70px #f00;
+    animation: glow 1.5s ease-in-out infinite alternate;
+  }
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #f00, 0 0 30px #f00, 0 0 40px #f00, 0 0 50px #f00, 0 0 60px #f00, 0 0 70px #f00;
+    }
+    to {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #0f0, 0 0 30px #0f0, 0 0 40px #0f0, 0 0 50px #0f0, 0 0 60px #0f0, 0 0 70px #0f0;
+    }
+  }
+
+  .neon-button:hover {
+    color: #000;
+    background-color: #fff;
+    border-color: #000;
+  }
+
+  .neon-button:active {
+    color: #000;
+    background-color: #fff;
+    border-color: #000;
+    text-shadow: none;
+  }
+
+  .container {
+    
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container::before {
+    content: "";
+    position: absolute;
+    width: 330px;
+    height: 330px;
+    border-radius: 50%;
+    background: linear-gradient(#08ffe6, #fcd200);
+    transform: translate(-490px, -150px);
+  }
+  .container::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: linear-gradient(#fcd200, #fc002e);
+    transform: translate(490px, 170px);
+  }
+ 
+
+  .container .ball-1 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: linear-gradient(#08ffe6, #fcd200);
+    transform: translate(-250px, 200px);
+    animation: ball-1 2s linear infinite;
+  }
+
+  .container .ball-2 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: linear-gradient(#fcd200, #fc002e);
+    transform: translate(-10px, -220px);
+    animation: ball-2 2s linear infinite;
+  }
+
+  .container .ball-3 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(#fc002e, #08ffe6);
+    transform: translate(150, 250);
+    animation: ball-3 2s linear infinite;
+  }
+
+  .container .box {
+    position: relative;
+    width: 75%;
+    height: 76vh;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 20px;
+    z-index: 10;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(25px);
+    box-shadow: -15px 17px 17px rgba(10, 10, 10, 0.25);
+  }
+
+  .container .box .nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 95%;
+    height: 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    margin: 15px auto;
+  }
+  .container .box .nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 10px;
+    padding: 0 20px;
+  }
+  .container .box .nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+  .container .box .nav ul li a:hover {
+    color: #ffd208;
+  }
+  .container .box .nav ul li a.active {
+    color: #ffd208;
+  }
+
+  .container .box .nav .logo {
+    font-size: 1.5rem;
+  
+    color: #fff;
+    margin-top: 10px;
+    margin-left: 20px;
+  }
+
+  .container .box .contains {
+    position: relative;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8%;
+    margin-left: 80px;
+  }
+
+  .container .box .contains .section-1 {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 70px;
+  }
+  .container .box .contains .section-1 h1 {
+    font-size: 75px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  .container .box .contains .section-1 h3 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #fff;
+    margin-bottom: 10px;
+
+  }
+  .container .box .contains .section-1 p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #fff;
+    margin-bottom: 10px;
+    margin-top: 5px;
+  }
+  .container .box .contains .section-1 .button {
+    margin-top: 50px;
+  }
+  .container .box .contains .section-1 .button a {
+    text-decoration: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    border: 1px solid #fff;
+  }
+  .container .box .contains .section-1 .button a:hover {
+    background: #fff;
+    color: #000;
+  }
+
+  .container .box .contains .section-2 {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+  }
+
+  .container .box .contains .section-2 img {
+    position: absolute;
+    width: 600px;
+    height: auto;
+    transform: translateX(380px);
+    animation: section-2 2s linear infinite;
+    justify-content: center;
+    align-items: center;
+
+  }
+  span {
+    color: #f84728;
+    font-size: 40px;
+  }
+
+  @keyframes ball-1 {
+    0% {
+      transform: translate(-250px, 200px);
+    }
+    50% {
+      transform: translate(-250px, -200px);
+    }
+    100% {
+      transform: translate(-250px, 200px);
+    }
+  }
+
+  @keyframes ball-2 {
+    0% {
+      transform: translate(-10px, -220px);
+    }
+    50% {
+      transform: translate(-10px, 220px);
+    }
+    100% {
+      transform: translate(-10px, -220px);
+    }
+  }
+
+  @keyframes ball-3 {
+    0% {
+      transform: translate(150, 250);
+    }
+    50% {
+      transform: translate(150, -250);
+    }
+    100% {
+      transform: translate(150, 250);
+    }
+  }

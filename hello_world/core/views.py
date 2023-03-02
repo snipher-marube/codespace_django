@@ -1,10 +1,10 @@
 from django.shortcuts import render
 
 def index(request):
-    return render(
-        request,
-        "index.html",
-        {
-            "title": "Django example",
-        },
-    )
+    context = {}
+    return render(request, 'core/index.html',context)
+
+
+def home(request):
+    context = {}
+    return render(request, 'core/home.html',context)

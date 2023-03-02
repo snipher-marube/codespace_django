@@ -1,7 +1,7 @@
 
 {% extends "base.html" %}
 {% load static %}
-{% block title %}snipherDev {% endblock %}
+{% block title %}Onboard {% endblock %}
 {% block content %}
 <div class="App">
     <header class="App-header">
@@ -12,7 +12,7 @@
         <p class="small">
             Edit <code>hello_world/templates/index.html</code> and see changes live!
         </p>
-        <button class="glowing-button">click Me</button>
+        <a href="{% url 'home' %}" class="neon-button">Learn more about Django</a>
     </header>
 </div>
 {% endblock %}
